@@ -1,0 +1,82 @@
+$keySize: 50px;
+$keyGapX: 3.5px;
+$keyGapY: 5px;
+
+$keyColor: black;
+$keyTextColor: white;
+
+$keyTextSize: ($keySize / 4);
+$doubleKeyXSize: ($keySize * 2) + $keyGapX;
+$doubleKeyYSize: ($keySize * 2) + $keyGapY;
+
+@mixin centerTextVertically($height){
+    height: $height;
+    line-height: $height;
+}
+// @media screen and (max-width: 700px){
+
+// }
+.keyboard{
+    width: fit-content;
+    box-shadow: 0 0 ($keySize / 2) dimgray;
+    border-radius: $keyGapX + $keyGapY;
+    margin: 10px;
+    padding: 10px;
+    background-color: lightgray;
+    .basic-keyboard .key-row:first-child, .control-arrows .key-row:first-child{
+        margin-bottom: $keyGapY * 2;
+    }
+    .num-pad{
+        padding-top: $keyGapY * 2;
+    }
+    .key-group{
+        display: inline-block;
+        vertical-align: top;
+    }
+    .key-row{
+        display: flex;
+        gap: $keyGapX;
+    }
+    .skip-key-row{
+        margin-top: $keySize + $keyGapY;
+    }
+    .skip-key-left{
+        margin-left: $keySize + $keyGapX;
+    }
+    .skip-key-right{
+        margin-right: $keySize + $keyGapX;
+    }
+    .key{
+        background-color: $keyColor;
+        border-radius: 5px;
+        font-size: $keyTextSize;
+        margin-bottom: $keyGapY;
+        width: $keySize;
+        @include centerTextVertically($keySize);
+        text-align: center;
+        color: $keyTextColor;
+        &span-x{
+            width: $doubleKeyXSize;
+        }
+        &span-y{
+            @include centerTextVertically($doubleKeyYSize);
+        }
+        &.space-to-right{
+            margin-right: 0.8 * $keySize;
+        }
+        &.rest{
+            flex-grow: 1;
+        }
+        &.rest:last-child{
+            padding-right: $keySize * 0.3;
+            text-align: right;
+        }
+        &.rest:first-child{
+            padding-left: $keySize * 0.3;
+            text-align: left;
+        }
+        &.space{
+            flex-grow: 30;
+        }
+    }
+}
