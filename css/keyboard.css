@@ -1,9 +1,32 @@
 .keyboard {
+  background-color: white;
+  padding: 8.5px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  padding: 10px;
-  background-color: lightgray;
+  -webkit-box-shadow: 0 0 1.7vw dimgray;
+          box-shadow: 0 0 1.7vw dimgray;
+  border-radius: 8.5px;
+}
+.keyboard-keys {
+  background-color: #DED2A8;
+  padding: 20px;
+  letter-spacing: 1px;
+}
+.keyboard-type-result {
+  height: 4.76vw;
+}
+.keyboard-type-result textarea {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  font-size: 1.1333333333vw;
+  font-weight: bold;
+  border: none;
+  resize: none;
+  outline: 0;
+  padding: 1.02vw;
 }
 .keyboard .basic-keyboard .key-row:first-child, .keyboard .control-arrows .key-row:first-child {
   margin-bottom: 10px;
@@ -22,34 +45,34 @@
   gap: 3.5px;
 }
 .keyboard .skip-key-row {
-  margin-top: 45px;
+  margin-top: calc(3.4vw + 5px);
 }
 .keyboard .skip-key-left {
-  margin-left: 43.5px;
+  margin-left: calc(3.4vw + 3.5px);
 }
 .keyboard .skip-key-right {
-  margin-right: 43.5px;
+  margin-right: calc(3.4vw + 3.5px);
 }
 .keyboard .key {
-  background-color: black;
+  background-color: #302718;
   border-radius: 5px;
-  font-size: 10px;
+  font-size: 1.1333333333vw;
   margin-bottom: 5px;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
+  width: 3.4vw;
+  height: 3.4vw;
+  line-height: 3.4vw;
   text-align: center;
   color: white;
 }
 .keyboard .keyspan-x {
-  width: 83.5px;
+  width: calc(6.8vw + 3.5px);
 }
 .keyboard .keyspan-y {
-  height: 85px;
-  line-height: 85px;
+  height: calc(6.8vw + 5px);
+  line-height: calc(6.8vw + 5px);
 }
 .keyboard .key.space-to-right {
-  margin-right: 32px;
+  margin-right: 2.72vw;
 }
 .keyboard .key.rest {
   -webkit-box-flex: 1;
@@ -57,11 +80,11 @@
           flex-grow: 1;
 }
 .keyboard .key.rest:last-child {
-  padding-right: 12px;
+  padding-right: 1.02vw;
   text-align: right;
 }
 .keyboard .key.rest:first-child {
-  padding-left: 12px;
+  padding-left: 1.02vw;
   text-align: left;
 }
 .keyboard .key.space {

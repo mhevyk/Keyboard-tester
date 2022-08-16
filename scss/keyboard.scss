@@ -1,28 +1,48 @@
-$keySize: 50px;
+$keySize: 3.4vw;
 $keyGapX: 3.5px;
 $keyGapY: 5px;
 
-$keyColor: black;
+$keyboardColor: #DED2A8;
+
+$keyColor: #302718;
 $keyTextColor: white;
 
-$keyTextSize: ($keySize / 4);
-$doubleKeyXSize: ($keySize * 2) + $keyGapX;
-$doubleKeyYSize: ($keySize * 2) + $keyGapY;
+$keyTextSize: ($keySize / 3);
+$doubleKeyXSize: calc(($keySize * 2) + $keyGapX);
+$doubleKeyYSize: calc(($keySize * 2) + $keyGapY);
+
+$alignPad: $keySize * 0.3;
 
 @mixin centerTextVertically($height){
     height: $height;
     line-height: $height;
 }
-// @media screen and (max-width: 700px){
-
-// }
 .keyboard{
+    background-color: white;
+    padding: $keyGapX + $keyGapY;
     width: fit-content;
     box-shadow: 0 0 ($keySize / 2) dimgray;
     border-radius: $keyGapX + $keyGapY;
-    margin: 10px;
-    padding: 10px;
-    background-color: lightgray;
+    
+    &-keys{
+        background-color: $keyboardColor;
+        padding: 20px;
+        letter-spacing: 1px;
+    }
+    &-type-result{
+        height: 1.4 * $keySize;
+        textarea{
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            font-size: $keyTextSize;
+            font-weight: bold;
+            border: none;
+            resize: none;
+            outline: 0;
+            padding: $alignPad;
+        }
+    }
     .basic-keyboard .key-row:first-child, .control-arrows .key-row:first-child{
         margin-bottom: $keyGapY * 2;
     }
@@ -38,13 +58,13 @@ $doubleKeyYSize: ($keySize * 2) + $keyGapY;
         gap: $keyGapX;
     }
     .skip-key-row{
-        margin-top: $keySize + $keyGapY;
+        margin-top: calc($keySize + $keyGapY);
     }
     .skip-key-left{
-        margin-left: $keySize + $keyGapX;
+        margin-left: calc($keySize + $keyGapX);
     }
     .skip-key-right{
-        margin-right: $keySize + $keyGapX;
+        margin-right: calc($keySize + $keyGapX);
     }
     .key{
         background-color: $keyColor;
@@ -68,11 +88,11 @@ $doubleKeyYSize: ($keySize * 2) + $keyGapY;
             flex-grow: 1;
         }
         &.rest:last-child{
-            padding-right: $keySize * 0.3;
+            padding-right: $alignPad;
             text-align: right;
         }
         &.rest:first-child{
-            padding-left: $keySize * 0.3;
+            padding-left: $alignPad;
             text-align: left;
         }
         &.space{
