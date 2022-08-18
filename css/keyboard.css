@@ -14,9 +14,11 @@
   letter-spacing: 1px;
 }
 .keyboard-type-result {
-  height: 4.76vw;
+  height: 4.08vw;
+  margin-bottom: 1.36vw;
 }
 .keyboard-type-result textarea {
+  line-height: 1.53vw;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
@@ -54,22 +56,44 @@
   margin-right: calc(3.4vw + 3.5px);
 }
 .keyboard .key {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: #302718;
   border-radius: 5px;
   font-size: 1.1333333333vw;
   margin-bottom: 5px;
   width: 3.4vw;
   height: 3.4vw;
-  line-height: 3.4vw;
   text-align: center;
   color: white;
+}
+.keyboard .key.active {
+  background-color: #699E3C;
+}
+.keyboard .key.hold {
+  background-color: #524329;
+}
+.keyboard .key.text-long {
+  font-size: 0.9444444444vw;
+}
+.keyboard .key.lh3 {
+  line-height: 1.1333333333vw;
+}
+.keyboard .key.lh4 {
+  line-height: 0.85vw;
 }
 .keyboard .keyspan-x {
   width: calc(6.8vw + 3.5px);
 }
 .keyboard .keyspan-y {
   height: calc(6.8vw + 5px);
-  line-height: calc(6.8vw + 5px);
 }
 .keyboard .key.space-to-right {
   margin-right: 2.72vw;
@@ -81,11 +105,15 @@
 }
 .keyboard .key.rest:last-child {
   padding-right: 1.02vw;
-  text-align: right;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
 }
 .keyboard .key.rest:first-child {
   padding-left: 1.02vw;
-  text-align: left;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
 }
 .keyboard .key.space {
   -webkit-box-flex: 30;

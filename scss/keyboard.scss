@@ -3,6 +3,7 @@ $keyGapX: 3.5px;
 $keyGapY: 5px;
 
 $keyboardColor: #DED2A8;
+$keyActiveColor: #699E3C;
 
 $keyColor: #302718;
 $keyTextColor: white;
@@ -12,11 +13,7 @@ $doubleKeyXSize: calc(($keySize * 2) + $keyGapX);
 $doubleKeyYSize: calc(($keySize * 2) + $keyGapY);
 
 $alignPad: $keySize * 0.3;
-
-@mixin centerTextVertically($height){
-    height: $height;
-    line-height: $height;
-}
+    
 .keyboard{
     background-color: white;
     padding: $keyGapX + $keyGapY;
@@ -30,8 +27,10 @@ $alignPad: $keySize * 0.3;
         letter-spacing: 1px;
     }
     &-type-result{
-        height: 1.4 * $keySize;
+        height: 1.2 * $keySize;
+        margin-bottom: 0.4 * $keySize;
         textarea{
+            line-height: 0.45 * $keySize;
             box-sizing: border-box;
             width: 100%;
             height: 100%;
@@ -67,19 +66,37 @@ $alignPad: $keySize * 0.3;
         margin-right: calc($keySize + $keyGapX);
     }
     .key{
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background-color: $keyColor;
         border-radius: 5px;
         font-size: $keyTextSize;
         margin-bottom: $keyGapY;
         width: $keySize;
-        @include centerTextVertically($keySize);
+        height: $keySize;
         text-align: center;
         color: $keyTextColor;
+        &.active{
+            background-color: $keyActiveColor;
+        }
+        &.hold{
+            background-color: lighten($keyColor, 10%);
+        }
+        &.text-long{
+            font-size: $keyTextSize / 1.2;
+        }
+        &.lh3{
+            line-height: $keySize / 3;
+        }
+        &.lh4{
+            line-height: $keySize / 4;
+        }
         &span-x{
             width: $doubleKeyXSize;
         }
         &span-y{
-            @include centerTextVertically($doubleKeyYSize);
+            height: $doubleKeyYSize;
         }
         &.space-to-right{
             margin-right: 0.8 * $keySize;
@@ -89,11 +106,11 @@ $alignPad: $keySize * 0.3;
         }
         &.rest:last-child{
             padding-right: $alignPad;
-            text-align: right;
+            justify-content: end;
         }
         &.rest:first-child{
             padding-left: $alignPad;
-            text-align: left;
+            justify-content: start;
         }
         &.space{
             flex-grow: 30;

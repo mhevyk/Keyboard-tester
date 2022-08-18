@@ -7,158 +7,159 @@
     <title>Keyboaard tester</title>
 
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/keyHandlers.js" defer></script>
+    <script src="libs/fontawesome.js"></script>
 </head>
 <body>
     <div class="wrapper">
         <div class="title">Keyboard test</div>
         <div class="keyboard">
             <div class="keyboard-type-result">
-            <textarea readonly>&lt;Enter&gt;</textarea>
+            <textarea readonly></textarea>
             </div>
             <div class="keyboard-keys">
                 <div class="basic-keyboard key-group">
                     <div class="key-row">
-                        <div class="key space-to-right">Esc</div>
-                        <div class="key">F1</div>
-                        <div class="key">F2</div>
-                        <div class="key">F3</div>
-                        <div class="key space-to-right">F4</div>
-                        <div class="key">F5</div>
-                        <div class="key">F6</div>
-                        <div class="key">F7</div>
-                        <div class="key space-to-right">F8</div>
-                        <div class="key">F9</div>
-                        <div class="key">F10</div>
-                        <div class="key">F11</div>
-                        <div class="key space-to-right">F12</div>
+                        <div class="key space-to-right" data-name="Escape">Esc</div>
+                        <div class="key" data-name="F1">F1</div>
+                        <div class="key" data-name="F2">F2</div>
+                        <div class="key" data-name="F3">F3</div>
+                        <div class="key space-to-right" data-name="F4">F4</div>
+                        <div class="key" data-name="F5">F5</div>
+                        <div class="key" data-name="F6">F6</div>
+                        <div class="key" data-name="F7">F7</div>
+                        <div class="key space-to-right" data-name="F8">F8</div>
+                        <div class="key" data-name="F9">F9</div>
+                        <div class="key" data-name="F10">F10</div>
+                        <div class="key" data-name="F11">F11</div>
+                        <div class="key space-to-right" data-name="F12">F12</div>
                     </div>
                     <div class="key-row">
-                        <div class="key">~ `</div>
-                        <div class="key">1</div>
-                        <div class="key">2</div>
-                        <div class="key">3</div>
-                        <div class="key">4</div>
-                        <div class="key">5</div>
-                        <div class="key">6</div>
-                        <div class="key">7</div>
-                        <div class="key">8</div>
-                        <div class="key">9</div>
-                        <div class="key">0</div>
-                        <div class="key">- _</div>
-                        <div class="key">+ =</div>
-                        <div class="key space-to-right rest">Backspace</div>
+                        <div class="key text-long lh3" data-name="Backquote">~<br>`</div>
+                        <div class="key" data-name="Digit1">1</div>
+                        <div class="key" data-name="Digit2">2</div>
+                        <div class="key" data-name="Digit3">3</div>
+                        <div class="key" data-name="Digit4">4</div>
+                        <div class="key" data-name="Digit5">5</div>
+                        <div class="key" data-name="Digit6">6</div>
+                        <div class="key" data-name="Digit7">7</div>
+                        <div class="key" data-name="Digit8">8</div>
+                        <div class="key" data-name="Digit9">9</div>
+                        <div class="key" data-name="Digit0">0</div>
+                        <div class="key text-long lh3" data-name="Minus">_<br>-</div>
+                        <div class="key text-long lh4" data-name="Equal">+<br>=</div>
+                        <div class="key space-to-right rest" data-name="Backspace">Backspace</div>
                     </div>
                     <div class="key-row">
-                        <div class="key rest text-left">Tab</div>
-                        <div class="key">Q</div>
-                        <div class="key">W</div>
-                        <div class="key">E</div>
-                        <div class="key">R</div>
-                        <div class="key">T</div>
-                        <div class="key">Y</div>
-                        <div class="key">U</div>
-                        <div class="key">I</div>
-                        <div class="key">O</div>
-                        <div class="key">P</div>
-                        <div class="key">{ [</div>
-                        <div class="key">] }</div>
-                        <div class="key text-right rest space-to-right">| \</div>
+                        <div class="key rest text-left" data-name="Tab">Tab &RightArrowLeftArrow;</div>
+                        <div class="key" data-name="KeyQ">Q</div>
+                        <div class="key" data-name="KeyW">W</div>
+                        <div class="key" data-name="KeyE">E</div>
+                        <div class="key" data-name="KeyR">R</div>
+                        <div class="key" data-name="KeyT">T</div>
+                        <div class="key" data-name="KeyY">Y</div>
+                        <div class="key" data-name="KeyU">U</div>
+                        <div class="key" data-name="KeyI">I</div>
+                        <div class="key" data-name="KeyO">O</div>
+                        <div class="key" data-name="KeyP">P</div>
+                        <div class="key text-long lh3" data-name="BracketLeft">{<br>[</div>
+                        <div class="key text-long lh3" data-name="BracketRight">]<br>}</div>
+                        <div class="key text-right rest space-to-right text-long lh3" data-name="Backslash">|<br>\</div>
                     </div>
                     <div class="key-row">
-                        <div class="key rest text-left">Caps Lock</div>
-                        <div class="key">A</div>
-                        <div class="key">S</div>
-                        <div class="key">D</div>
-                        <div class="key">F</div>
-                        <div class="key">G</div>
-                        <div class="key">H</div>
-                        <div class="key">J</div>
-                        <div class="key">K</div>
-                        <div class="key">L</div>
-                        <div class="key">: ;</div>
-                        <div class="key">""</div>
-                        <div class="key rest space-to-right">Enter</div>
+                        <div class="key rest text-left" data-name="CapsLock">Caps Lock</div>
+                        <div class="key" data-name="KeyA">A</div>
+                        <div class="key" data-name="KeyS">S</div>
+                        <div class="key" data-name="KeyD">D</div>
+                        <div class="key" data-name="KeyF">F</div>
+                        <div class="key" data-name="KeyG">G</div>
+                        <div class="key" data-name="KeyH">H</div>
+                        <div class="key" data-name="KeyJ">J</div>
+                        <div class="key" data-name="KeyK">K</div>
+                        <div class="key" data-name="KeyL">L</div>
+                        <div class="key text-long lh3" data-name="Semicolon">:<br>;</div>
+                        <div class="key text-long lh4" data-name="Quote">"<br>'</div>
+                        <div class="key rest space-to-right" data-name="Enter">Enter &crarr;</div>
                     </div>
                     <div class="key-row">
-                        <div class="key rest text-left">Shift</div>
-                        <div class="key">Z</div>
-                        <div class="key">X</div>
-                        <div class="key">C</div>
-                        <div class="key">V</div>
-                        <div class="key">B</div>
-                        <div class="key">N</div>
-                        <div class="key">M</div>
-                        <div class="key">,</div>
-                        <div class="key">.</div>
-                        <div class="key">/ ?</div>
-                        <div class="key rest space-to-right">Shift</div>
+                        <div class="key rest text-left" data-name="ShiftLeft">Shift &#x1F845;</div>
+                        <div class="key" data-name="KeyZ">Z</div>
+                        <div class="key" data-name="KeyX">X</div>
+                        <div class="key" data-name="KeyC">C</div>
+                        <div class="key" data-name="KeyV">V</div>
+                        <div class="key" data-name="KeyB">B</div>
+                        <div class="key" data-name="KeyN">N</div>
+                        <div class="key" data-name="KeyM">M</div>
+                        <div class="key text-long lh4" data-name="Comma">&lt;<br>,</div>
+                        <div class="key text-long lh4" data-name="Period">&gt;<br>.</div>
+                        <div class="key text-long lh3" data-name="Slash">?<br>/</div>
+                        <div class="key rest space-to-right" data-name="ShiftRight">Shift &#x1F845;</div>
                     </div>
                     <div class="key-row">
-                        <div class="key rest text-left">Ctrl</div>
-                        <div class="key rest">Win</div>
-                        <div class="key rest">Alt</div>
-                        <div class="key space"></div>
-                        <div class="key rest">Alt</div>
-                        <div class="key rest">Win</div>
-                        <div class="key rest">What</div>
-                        <div class="key rest space-to-right">Ctrl</div>
+                        <div class="key rest text-left" data-name="ControlLeft">Ctrl</div>
+                        <div class="key rest" data-name="MetaLeft"><i class="fa fa-windows" aria-hidden="true"></i></div>
+                        <div class="key rest" data-name="AltLeft">Alt</div>
+                        <div class="key space" data-name="Space"></div>
+                        <div class="key rest" data-name="AltRight">Alt</div>
+                        <div class="key rest" data-name="MetaRight"><i class="fa fa-windows" aria-hidden="true"></i></div>
+                        <div class="key rest space-to-right" data-name="ControlRight">Ctrl</div>
                     </div>
                 </div>
                 <div class="control-arrows key-group">
                     <div class="key-row">
-                        <div class="key">Prt Sc</div>
-                        <div class="key">Scr Lk</div>
-                        <div class="key">Pause</div>
+                        <div class="key text-long lh4" data-name="PrintScreen">Print Screen</div>
+                        <div class="key text-long lh4">Scroll Lock</div>
+                        <div class="key text-long lh4">Pause</div>
                     </div>
                     <div class="key-row">
-                        <div class="key">Insert</div>
-                        <div class="key">Home</div>
-                        <div class="key space-to-right">Pg Up</div>
+                        <div class="key text-long lh4" data-name="Insert">Insert</div>
+                        <div class="key text-long lh4" data-name="Home">Home</div>
+                        <div class="key space-to-right text-long lh4" data-name="PageUp">Page<br>Up</div>
                     </div>
                     <div class="key-row">
-                        <div class="key">Delete</div>
-                        <div class="key">End</div>
-                        <div class="key space-to-right">Pg Dn</div>
+                        <div class="key text-long lh4" data-name="Delete">Delete</div>
+                        <div class="key text-long lh4" data-name="End">End</div>
+                        <div class="key space-to-right text-long lh4" data-name="PageDown">Page<br>Down</div>
                     </div>
                     <div class="key-row skip-key-row">
-                        <div class="key skip-key-left skip-key-right">↑</div>
+                        <div class="key skip-key-left skip-key-right" data-name="ArrowUp">↑</div>
                     </div>
                     <div class="key-row">
-                        <div class="key">←</div>
-                        <div class="key">↓</div>
-                        <div class="key space-to-right">→</div>
+                        <div class="key" data-name="ArrowLeft">←</div>
+                        <div class="key" data-name="ArrowDown">↓</div>
+                        <div class="key space-to-right" data-name="ArrowRight">→</div>
                     </div>
                 </div>
                 <div class="num-pad num-pad-start key-group skip-key-row">
                     <div class="key-row">
-                        <div class="key">Num Lock</div>
-                        <div class="key">/</div>
-                        <div class="key">*</div>
+                        <div class="key text-long lh4" data-name="NumLock">Num<br>Lock</div>
+                        <div class="key" data-name="NumpadDivide">/</div>
+                        <div class="key" data-name="NumpadMultiply">*</div>
                     </div>
                     <div class="key-row">
-                        <div class="key">7</div>
-                        <div class="key">8</div>
-                        <div class="key">9</div>
+                        <div class="key" data-name="Numpad7">7</div>
+                        <div class="key" data-name="Numpad8">8</div>
+                        <div class="key" data-name="Numpad9">9</div>
                     </div>
                     <div class="key-row">
-                        <div class="key">4</div>
-                        <div class="key">5</div>
-                        <div class="key">6</div>
+                        <div class="key" data-name="Numpad4">4</div>
+                        <div class="key" data-name="Numpad5">5</div>
+                        <div class="key" data-name="Numpad6">6</div>
                     </div>
                     <div class="key-row">
-                        <div class="key">1</div>
-                        <div class="key">2</div>
-                        <div class="key">3</div>
+                        <div class="key" data-name="Numpad1">1</div>
+                        <div class="key" data-name="Numpad2">2</div>
+                        <div class="key" data-name="Numpad3">3</div>
                     </div>
                     <div class="key-row">
-                        <div class="key keyspan-x">0</div>
-                        <div class="key">Del</div>
+                        <div class="key keyspan-x" data-name="Numpad0">0</div>
+                        <div class="key text-long lh3" data-name="NumpadDecimal">.<br>Del</div>
                     </div>
                 </div>
                 <div class="num-pad num-pad-end key-group skip-key-row">
-                    <div class="key">-</div>
-                    <div class="key keyspan-y">+</div>
-                    <div class="key keyspan-y">Enter</div>
+                    <div class="key" data-name="NumpadSubtract">-</div>
+                    <div class="key keyspan-y" data-name="NumpadAdd">+</div>
+                    <div class="key keyspan-y" data-name="NumpadEnter">Enter</div>
                 </div>
             </div>
         </div>
