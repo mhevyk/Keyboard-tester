@@ -12,14 +12,18 @@ const getClickedKeyData = event => {
 document.onkeydown = event => {
     const keyNode = getClickedKeyData(event).keyNode;
     if(keyNode){
-        keyNode.classList.add("hold");
+        const classList = keyNode.classList;
+        if(classList.contains("active")){
+            classList.add("unhold");
+        }
+        classList.add("hold");
     }
 }
 document.onkeyup = event => {  
     const keyData = getClickedKeyData(event);
     const keyNode = keyData.keyNode;
     if(keyNode){
-        keyNode.classList.remove("hold")
+        keyNode.classList.remove("hold", "unhold");
         keyNode.classList.toggle("active");
 
         keyboard.querySelector("textarea").textContent += `<${keyData.name}>`;

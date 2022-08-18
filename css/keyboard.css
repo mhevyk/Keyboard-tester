@@ -80,6 +80,9 @@
 .keyboard .key.hold {
   background-color: #524329;
 }
+.keyboard .key.unhold {
+  background-color: #8fc463;
+}
 .keyboard .key.text-long {
   font-size: 0.9444444444vw;
 }

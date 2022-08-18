@@ -83,6 +83,9 @@ $alignPad: $keySize * 0.3;
         &.hold{
             background-color: lighten($keyColor, 10%);
         }
+        &.unhold{
+            background-color: lighten($keyActiveColor, 15%);
+        }
         &.text-long{
             font-size: $keyTextSize / 1.2;
         }
