@@ -10,15 +10,15 @@ const getClickedKeyData = event => {
 
 }
 document.onkeydown = event => {
+    event.preventDefault();
     const keyNode = getClickedKeyData(event).keyNode;
     if(keyNode){
         const classList = keyNode.classList;
-        if(classList.contains("active")){
-            classList.add("unhold");
-        }
-        classList.add("hold");
+        const holdClass = classList.contains("active") ? "unhold" : "hold";
+        classList.add(holdClass);
     }
 }
+
 document.onkeyup = event => {  
     const keyData = getClickedKeyData(event);
     const keyNode = keyData.keyNode;
@@ -26,6 +26,8 @@ document.onkeyup = event => {
         keyNode.classList.remove("hold", "unhold");
         keyNode.classList.toggle("active");
 
-        keyboard.querySelector("textarea").textContent += `<${keyData.name}>`;
+        const textarea = keyboard.querySelector("textarea");
+        textarea.textContent += `<${keyData.name}>`;
+        textarea.scrollTop = textarea.scrollHeight;
     }
 };

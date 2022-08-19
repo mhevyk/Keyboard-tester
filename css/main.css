@@ -1,4 +1,8 @@
 .keyboard {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   background-color: white;
   padding: 8.5px;
   width: -webkit-fit-content;
@@ -15,9 +19,10 @@
 }
 .keyboard-type-result {
   height: 4.08vw;
-  margin-bottom: 1.36vw;
+  margin: 0.68vw 0px;
 }
 .keyboard-type-result textarea {
+  overflow-y: hidden;
   line-height: 1.53vw;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -30,7 +35,8 @@
   outline: 0;
   padding: 1.02vw;
 }
-.keyboard .basic-keyboard .key-row:first-child, .keyboard .control-arrows .key-row:first-child {
+.keyboard .basic-keyboard .key-row:first-child,
+.keyboard .control-arrows .key-row:first-child {
   margin-bottom: 10px;
 }
 .keyboard .num-pad {
@@ -73,6 +79,7 @@
   height: 3.4vw;
   text-align: center;
   color: white;
+  line-height: 1.1333333333vw;
 }
 .keyboard .key.active {
   background-color: #699E3C;
@@ -83,7 +90,7 @@
 .keyboard .key.unhold {
   background-color: #8fc463;
 }
-.keyboard .key.text-long {
+.keyboard .key.text-short {
   font-size: 0.9444444444vw;
 }
 .keyboard .key.lh3 {
@@ -98,7 +105,7 @@
 .keyboard .keyspan-y {
   height: calc(6.8vw + 5px);
 }
-.keyboard .key.space-to-right {
+.keyboard .key.padRight {
   margin-right: 2.72vw;
 }
 .keyboard .key.rest {
@@ -124,6 +131,25 @@
           flex-grow: 30;
 }
 
+.mobile-warn {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  header, .keyboard {
+    display: none;
+  }
+
+  .mobile-warn {
+    display: block;
+    font-size: 30px;
+    padding: 0px 10vw;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    word-wrap: break-word;
+  }
+}
 @font-face {
   font-family: kp;
   src: url(../fonts/corner.otf);
@@ -155,11 +181,19 @@ body {
           justify-content: center;
 }
 
-.title {
-  font-size: 6vw;
-  font-weight: bold;
+header {
   margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 5vw;
+  font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 1.5vw;
+  letter-spacing: 1.2vw;
   color: #699E3C;
+}
+
+.subtitle {
+  font-size: 1.5vw;
+  letter-spacing: 1px;
 }

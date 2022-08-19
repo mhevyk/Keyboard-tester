@@ -13,8 +13,18 @@ $doubleKeyXSize: calc(($keySize * 2) + $keyGapX);
 $doubleKeyYSize: calc(($keySize * 2) + $keyGapY);
 
 $alignPad: $keySize * 0.3;
+
+@mixin lh($divideKoefitient){
+    line-height: $keySize / $divideKoefitient;
+}
+@mixin flexCentering{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
     
 .keyboard{
+    user-select: none;
     background-color: white;
     padding: $keyGapX + $keyGapY;
     width: fit-content;
@@ -28,8 +38,9 @@ $alignPad: $keySize * 0.3;
     }
     &-type-result{
         height: 1.2 * $keySize;
-        margin-bottom: 0.4 * $keySize;
+        margin: (0.2 * $keySize) 0px;
         textarea{
+            overflow-y: hidden;
             line-height: 0.45 * $keySize;
             box-sizing: border-box;
             width: 100%;
@@ -42,7 +53,8 @@ $alignPad: $keySize * 0.3;
             padding: $alignPad;
         }
     }
-    .basic-keyboard .key-row:first-child, .control-arrows .key-row:first-child{
+    .basic-keyboard .key-row:first-child,
+    .control-arrows .key-row:first-child{
         margin-bottom: $keyGapY * 2;
     }
     .num-pad{
@@ -66,9 +78,7 @@ $alignPad: $keySize * 0.3;
         margin-right: calc($keySize + $keyGapX);
     }
     .key{
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flexCentering;
         background-color: $keyColor;
         border-radius: 5px;
         font-size: $keyTextSize;
@@ -86,8 +96,11 @@ $alignPad: $keySize * 0.3;
         &.unhold{
             background-color: lighten($keyActiveColor, 15%);
         }
-        &.text-long{
+        &.text-short{
             font-size: $keyTextSize / 1.2;
+        }
+        @for $i from 3 to 4{
+            @include lh($i);
         }
         &.lh3{
             line-height: $keySize / 3;
@@ -101,7 +114,7 @@ $alignPad: $keySize * 0.3;
         &span-y{
             height: $doubleKeyYSize;
         }
-        &.space-to-right{
+        &.padRight{
             margin-right: 0.8 * $keySize;
         }
         &.rest{
@@ -118,5 +131,22 @@ $alignPad: $keySize * 0.3;
         &.space{
             flex-grow: 30;
         }
+    }
+}
+.mobile-warn{
+    display: none;
+}
+@media screen and (max-width: 900px){
+    header, .keyboard{
+        display: none;
+    }
+    .mobile-warn{
+        display: block;
+        font-size: 30px;
+        padding: 0px 10vw;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bold;
+        word-wrap: break-word;
     }
 }
