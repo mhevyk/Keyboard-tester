@@ -21,6 +21,7 @@ body{
 }
 header{
     margin-bottom: 2rem;
+    text-align: center;
 }
 .title{
     font-size: 5vw;
@@ -32,4 +33,13 @@ header{
 .subtitle{
     font-size: 1.5vw;
     letter-spacing: 1px;
+}
+footer{
+    margin: 15px 0px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: $keyColor;
+    a{
+        color: $keyActiveColor;
+    }
 }

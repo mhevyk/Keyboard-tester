@@ -1,5 +1,11 @@
 let keyboard = document.querySelector(".keyboard");
 
+const footerYear = document.querySelector(".current-year");
+const currentYear = (new Date()).getFullYear();
+if(currentYear !== 2022){
+    footerYear.textContent = "-" + currentYear;
+}
+
 const getClickedKeyData = event => {
     const keyboard = document.querySelector(".keyboard");
     const keyName = event.code;

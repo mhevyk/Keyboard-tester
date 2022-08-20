@@ -183,6 +183,7 @@ body {
 
 header {
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .title {
@@ -196,4 +197,14 @@ header {
 .subtitle {
   font-size: 1.5vw;
   letter-spacing: 1px;
+}
+
+footer {
+  margin: 15px 0px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #302718;
+}
+footer a {
+  color: #699E3C;
 }
